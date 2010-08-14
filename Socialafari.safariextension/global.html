@@ -1,0 +1,22 @@
+<script type="text/javascript" charset="utf-8">
+  var handlers = {
+    delicious: decodeURIComponent("(function(){f='http://delicious.com/save?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)+'&v=5&';a=function(){if(!window.open(f+'noui=1&jump=doclose','deliciousuiv5','location=no,links=no,scrollbars=no,toolbar=no,width=550,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()"),
+    facebook:  decodeURIComponent("var%20d=document,f='http://www.facebook.com/share',l=d.location,e=encodeURIComponent,p='.php?src=bm&v=4&i=1281549411&u='+e(l.href)+'&t='+e(d.title);1;try{if%20(!/^(.*\.)?facebook\.[^.]*$/.test(l.host))throw(0);share_internal_bookmarklet(p)}catch(z)%20{a=function()%20{if%20(!window.open(f+'r'+p,'sharer','toolbar=0,status=0,resizable=1,width=626,height=436'))l.href=f+p};if%20(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else{a()}}void(0)"),
+    tumblr:    decodeURIComponent("var%20d=document,w=window,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),f='http://www.tumblr.com/share',l=d.location,e=encodeURIComponent,p='?v=3&u='+e(l.href)%20+'&t='+e(d.title)%20+'&s='+e(s),u=f+p;try%7Bif(!/%5E(.*%5C.)?tumblr%5B%5E.%5D*$/.test(l.host))throw(0);tstbklt();%7Dcatch(z)%7Ba%20=function()%7Bif(!w.open(u,'t','toolbar=0,resizable=0,status=1,width=450,height=430'))l.href=u;%7D;if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();%7Dvoid(0)")
+  };
+
+  safari.application.addEventListener("validate", function (event) {
+    if (handlers[event.command]) {
+      event.target.disabled = !(event.target.browserWindow.activeTab.url);
+    }
+  }, false);
+
+  safari.application.addEventListener("command", function (event) {
+    if (handlers[event.command]) {
+      var tab  = safari.application.activeBrowserWindow.activeTab;
+      var code = handlers[event.command];
+      var message = [tab.url, code];
+      tab.page.dispatchMessage("eval", message);
+    }
+  }, false);
+</script>

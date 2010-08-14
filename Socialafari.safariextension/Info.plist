@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Christoffer Sawicki</string>
+	<key>CFBundleDisplayName</key>
+	<string>Socialafari</string>
+	<key>CFBundleIdentifier</key>
+	<string>net.vemod.socialafari</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Global Page</key>
+		<string>global.html</string>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Command</key>
+				<string>delicious</string>
+				<key>Identifier</key>
+				<string>delicious</string>
+				<key>Image</key>
+				<string>delicious.png</string>
+				<key>Label</key>
+				<string>Share on Delicious</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>tumblr</string>
+				<key>Identifier</key>
+				<string>tumblr</string>
+				<key>Image</key>
+				<string>tumblr.png</string>
+				<key>Label</key>
+				<string>Share on Tumblr</string>
+			</dict>
+			<dict>
+				<key>Command</key>
+				<string>facebook</string>
+				<key>Identifier</key>
+				<string>facebook</string>
+				<key>Image</key>
+				<string>facebook.png</string>
+				<key>Label</key>
+				<string>Share on Facebook</string>
+			</dict>
+		</array>
+	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>End</key>
+			<array>
+				<string>injected.js</string>
+			</array>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>Buttons for a social Safari!</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
